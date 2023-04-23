@@ -1,0 +1,51 @@
+.WelcomeSection {
+    width: 100%;
+    height: 700px;
+    background-image: url(https://www.nccu.edu.tw/var/file/0/1000/pictures/347/part_11047_9531685_95865.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.MiddleText {
+    position: relative;
+    left: 5%;
+    top: 15%;
+    width: 90%;
+    font-size: 100px;
+    /* z-index: 9; */
+    font-weight: 550;
+}
+
+.MiddleText2 {
+    position: relative;
+    left: 6%;
+    width: 90%;
+    font-size: 40px;
+    /* z-index: 9; */
+    font-weight: 550;
+}
+
+.MiddleButton {
+    width: 200px;
+    height: 50px;
+    position: relative;
+    top: 5%;
+    left: 6%;
+    /* z-index: 9; */
+    border-radius: 9px;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.MiddleButton:hover {
+    background-color: #ffffffa7;
+}
+
+.MiddleButtonText {
+    font-size: 20px;
+    font-weight: 550;
+}

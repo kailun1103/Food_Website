@@ -1,0 +1,108 @@
+#RecommendSection {
+    width: 100%;
+    height: 3000px;
+    background-color: rgba(32, 218, 63, 0.5);
+}
+
+.RecommendText {
+    position: relative;
+    left: 5%;
+    top: 4%;
+    width: 90%;
+    font-size: 100px;
+    z-index: 9;
+    font-weight: 550;
+}
+
+
+.Res_Box {
+    border-top: 1px solid #726e6e;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    top: 30vh;
+    width: 91%;
+    height: 280px;
+}
+
+.Res_PicSection {
+    display: flex;
+    height: 100%;
+    width: 25%;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+}
+
+.Res_PicSection img {
+    max-height: 80%;
+}
+
+.Res_Left_TextSection {
+    background-color: rgb(191, 191, 27);
+    position: relative;
+    width: 25%;
+}
+
+.Res_Left_Title {
+    position: relative;
+    top: 5%;
+    left: 4%;
+    font-size: 40px;
+}
+
+.Res_Left_Classification {
+    position: relative;
+    top: 8%;
+    left: 4%;
+    font-size: 20px;
+}
+
+.Res_Left_IntroduceSection {
+    position: relative;
+    top: 10%;
+    left: 4%;
+    height: 62%;
+    width: 96%;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.Res_Left_IntroduceTitle {
+    position: relative;
+    font-size: 20px;
+}
+
+.Res_Right_TextSection {
+    background-color: rgb(191, 27, 158);
+    position: relative;
+    width: 25%;
+}
+
+.Res_Right_Score {
+    position: relative;
+    top: 5%;
+    left: 4%;
+    font-size: 20px;
+}
+
+.Res_Right_CommentTitle {
+    position: relative;
+    top: 8%;
+    left: 4%;
+    font-size: 20px;
+}
+
+.Res_Right_CommentRollBox {
+    position: relative;
+    top: 10%;
+    left: 4%;
+    font-size: 20px;
+
+}
+
+.Res_MapSection {
+    background-color: rgba(5, 153, 44, 0.611);
+    position: relative;
+    width: 25%;
+}

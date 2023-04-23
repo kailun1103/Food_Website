@@ -1,0 +1,35 @@
+.AboutSection {
+    width: 100%;
+    height: 3000px;
+    background-color: rgba(40, 145, 58, 0.5);
+}
+
+.InfoSection {
+    background-color: blueviolet;
+    border-top: 1px solid #726e6e;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    top: 30vh;
+    width: 91%;
+    height: 380px;
+}
+
+.Info_PicSection {
+    display: flex;
+    height: 100%;
+    width: 40%;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+}
+
+.Info_PicSection img {
+    max-height: 80%;
+}
+
+.Info_TextSection {
+    background-color: rgb(191, 191, 27);
+    position: relative;
+    width: 60%;
+}
