@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
-import './PopupWindow.css';
+import './AddPopup.css';
 
-const PopupWindow = () => {
+const AddPopup = () => {
     const res_API = "http://localhost:8000/menu";
 
     const handleSubmit = (event) => { // handleSubmit處理提交表單的邏輯
         const newMenuItem = { // 當表單提交時，通過 document.querySelector 獲取表單元素的值，然後構造一個新的菜單項 newMenuItem
-            title: document.querySelector("#title").value,
-            price: document.querySelector("#price").value,
+            resName: document.querySelector("#resName").value,
             img: document.querySelector("#img").value,
+            classification: document.querySelector("#classification").value,
             intro: document.querySelector("#intro").value
         };
 
@@ -32,9 +32,9 @@ const PopupWindow = () => {
         <h2>悬浮式窗口标题</h2>
         <form onSubmit={handleSubmit}>  {/* 當提交按鈕被點擊時，會觸發 handleSubmit 函數 */}
             <p>悬浮式窗口内容</p>
-            <input type="text" placeholder="title" id="title" />
-            <input type="text" placeholder="price" id="price" />
+            <input type="text" placeholder="resName" id="resName" />
             <input type="text" placeholder="img" id="img" />
+            <input type="text" placeholder="classification" id="classification" />
             <input type="text" placeholder="intro" id="intro" />
             <button type="submit">提交</button>
         </form>
@@ -42,4 +42,4 @@ const PopupWindow = () => {
 
 }
 
-export default PopupWindow;
+export default AddPopup;

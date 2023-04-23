@@ -1,19 +1,26 @@
 {
-    "menu": [
-        {
-            "resName": "啵啵恰恰",
-            "img": "123",
-            "classification": "中式餐點",
-            "intro": "cp值很低，吃不飽",
-            "id": 1.1
-        },
-        {
-            "resName": "美香味",
-            "img": "456",
-            "classification": "中式餐點",
-            "intro": "cp值很高，泰式炒飯好吃",
-            "id": 2.1
-        }
-    ],
-    "kellen_intro": []
+  "menu": [
+    {
+      "resName": "啵啵恰恰",
+      "img": "123",
+      "classification": "中式餐點",
+      "intro": "cp值很低，吃不飽",
+      "id": 1.1
+    },
+    {
+      "resName": "美香味",
+      "img": "456",
+      "classification": "中式餐點",
+      "intro": "cp值很高，泰式炒飯好吃",
+      "id": 2.1
+    },
+    {
+      "resName": "提洛斯",
+      "img": "3321",
+      "classification": "西式餐點",
+      "intro": "平價義大利麵、頓飯",
+      "id": 3.1
+    }
+  ],
+  "kellen_intro": []
 }

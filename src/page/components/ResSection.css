@@ -34,6 +34,12 @@
     justify-content: center;
 }
 
+.Res_PicSection.darken {
+
+    pointer-events: none;
+    z-index: -1;
+}
+
 .Res_PicSection img {
     max-height: 80%;
 }
@@ -42,6 +48,13 @@
     background-color: rgb(191, 191, 27);
     position: relative;
     width: 25%;
+    height: 85%;
+}
+
+.Res_Left_TextSection.darken {
+
+    pointer-events: none;
+    z-index: -1;
 }
 
 .Res_Left_Title {
@@ -73,10 +86,21 @@
     font-size: 20px;
 }
 
+.Res_Left_ButtonSection {
+    position: relative;
+    background-color: coral;
+}
+
 .Res_Right_TextSection {
     background-color: rgb(191, 27, 158);
     position: relative;
     width: 25%;
+}
+
+.Res_Right_TextSection.darken {
+
+    pointer-events: none;
+    z-index: -1;
 }
 
 .Res_Right_Score {
@@ -94,7 +118,11 @@
 }
 
 .Res_Right_CommentRollBox {
+    overflow: auto;
+    height: 70%;
+    width: 95%;
     position: relative;
+    background-color: blue;
     top: 10%;
     left: 4%;
     font-size: 20px;
@@ -105,4 +133,34 @@
     background-color: rgba(5, 153, 44, 0.611);
     position: relative;
     width: 25%;
+}
+
+.Res_MapSection.darken {
+    pointer-events: none;
+    z-index: -1;
+}
+
+.ModifyPopupButton {
+    /* position: relative;
+    top: 100px; */
+    width: 100px;
+}
+
+.ModifyPopupBackgroud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.101);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.ModifyPopupSection {
+    width: 50%;
+    height: 60%;
+    background-color: white;
 }
