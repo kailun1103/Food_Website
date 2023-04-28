@@ -29,9 +29,9 @@ const AddPopup = () => {
     };
     return <div>
 
-        <h2>悬浮式窗口标题</h2>
+        <h2>新增資料到db</h2>
         <form onSubmit={handleSubmit}>  {/* 當提交按鈕被點擊時，會觸發 handleSubmit 函數 */}
-            <p>悬浮式窗口内容</p>
+            <p>新增內容</p>
             <input type="text" placeholder="resName" id="resName" />
             <input type="text" placeholder="img" id="img" />
             <input type="text" placeholder="classification" id="classification" />

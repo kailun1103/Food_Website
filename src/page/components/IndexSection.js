@@ -24,13 +24,13 @@ const IndexSection = () => {
                 <button className='TopButton' style={{ right: '50%' }} onClick={homePageClick}><Link to='/home'>Home</Link></button>
             </span>
             <span>
-                <button className='TopButton' style={{ right: '38%' }} onClick={aboutPageClick}><Link to='/about'>About</Link></button>
+                {/* <button className='TopButton' style={{ right: '38%' }} onClick={aboutPageClick}><Link to='/about'>About</Link></button> */}
             </span>
             <span>
                 <button className='TopButton' style={{ right: '26%' }} onClick={aboutPageClick}><Link to='/explore'>Explore</Link></button>
             </span>
             <span>
-                <button className='TopButton' style={{ right: '14%' }}>Contact</button>
+                {/* <button className='TopButton' style={{ right: '14%' }}>Contact</button> */}
             </span>
         </div>
 

@@ -25,6 +25,11 @@
     height: 280px;
 }
 
+.Res_Box.darken {
+    pointer-events: none;
+    z-index: -1;
+}
+
 .Res_PicSection {
     display: flex;
     height: 100%;
@@ -146,13 +151,38 @@
     width: 100px;
 }
 
+.CommonPopupButton {
+    /* position: relative;
+    top: 100px; */
+    width: 100px;
+}
+
+.CommonPopupBackgroud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.CommonPopupSection {
+    width: 50%;
+    height: 60%;
+    background-color: white;
+}
+
 .ModifyPopupBackgroud {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.101);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
