@@ -1,0 +1,97 @@
+.AddPopupSection {
+    font-size: 22px;
+}
+
+.AddPopupTopSection {
+    position: relative;
+    background-color: burlywood;
+    top: -26px;
+    height: 60px;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.AddPopupTopSection button:hover {
+    filter: brightness(120%);
+    transition: filter 0.3s ease-in-out;
+    mix-blend-mode: difference;
+}
+
+.AddPopupTopSection h3 {
+    position: relative;
+    top: 10px;
+    left: 15px;
+}
+
+.AddPopupTopSection button {
+    background-image: url('file:///E:/KaiLun_Secret/程式語言啦幹/Side%20Project/food_website/src/data/cancel_button.png');
+    background-repeat: no-repeat;
+    background-size: 27px;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    mix-blend-mode: normal;
+}
+
+.AddPopupInputSection {
+    display: block;
+    /* justify-content: space-between; */
+    background-color: rgba(0, 255, 255, 0.13);
+}
+
+.AddPopupInputLeft {
+    display: inline-block;
+    background-color: aquamarine;
+    width: 50%;
+    vertical-align: top;
+}
+
+.AddPopupInputRight {
+    display: inline-block;
+    background-color: bisque;
+    width: 50%;
+    vertical-align: top;
+    position: relative;
+}
+
+
+.AddPopupLabel {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.AddPopupInput {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#previewPic {
+    max-width: 250px;
+    max-height: 340px;
+}
+
+
+
+
+
+
+/* .AddPopupInput {
+    margin-top: 30px;
+    margin-left: 10px;
+} */
+
+
+
+/* .AddPopupPic {
+    position: relative;
+    top: -324px;
+    left: 400px;
+    right: 5px;
+} */

@@ -47,7 +47,7 @@ const ResSection = () => {
                         </div>
 
                         <div className="Res_Right_TextSection">
-                            <div className="Res_Right_Score"><b>評分: </b>{(item.score.reduce((a, b) => a + b, 0) / item.score.length).toFixed(1)}</div>
+                            <div className="Res_Right_Score"><b>評分: </b>{(item.score?.reduce((a, b) => a + b, 0) / item.score?.length || 0).toFixed(1)}</div>
                             <div className="Res_Right_CommentTitle"><b>評論: </b></div>
                             <div className="Res_Right_CommentRollBox">
                                 {item.common.map((comment, index) => (

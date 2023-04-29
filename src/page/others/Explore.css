@@ -23,10 +23,10 @@
 }
 
 .AddPopupSection {
-    width: 50%;
-    height: 60%;
-    background-color: white;
-    padding: 20px;
+    width: 60%;
+    height: 70%;
+    background-color: rgb(211, 208, 208);
+    border-radius: 10px;
 }
 
 .AddPopupButton {
