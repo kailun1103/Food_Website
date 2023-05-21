@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import ModifyPopup from './ModifyPopup';
 import CommonPopup from './CommonPopup';
+import firebase from '../../utils/FireBase';
+import GoogleMapAPI from '../../utils/GoogleMapAPI';
+import 'firebase/compat/database';
 import '../others/Explore.css';
 import './ResSection.css';
 
@@ -13,13 +16,35 @@ const ResSection = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:8000/menu")
-            .then((res) => {
-                return res.json();
-            })
-            .then((data) => {
-                setMenu(data);
-            })
+        const fetchData = async () => {
+            try {
+                const snapshot = await firebase.database().ref('menu').once('value');
+                const data = snapshot.val();
+                if (data) {
+                    const menuData = Object.keys(data).map((key) => ({ id: key, ...data[key] }));
+                    setMenu(menuData);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
+
+        // 設定即時監聽器
+        const databaseRef = firebase.database().ref('menu');
+        databaseRef.on('value', (snapshot) => {
+            const data = snapshot.val();
+            if (data) {
+                const menuData = Object.keys(data).map((key) => ({ id: key, ...data[key] }));
+                setMenu(menuData);
+            }
+        });
+
+        // 記得在組件卸載時取消監聽
+        return () => {
+            databaseRef.off('value');
+        };
     }, []);
 
     return (
@@ -28,7 +53,7 @@ const ResSection = () => {
                 <div key={item.id}>
                     <div className={`Res_Box ${modifyPopup ? 'darken' : ''}`}>
                         <div className="Res_PicSection">
-                            <img alt='啵啵恰恰'></img>
+                            <img src={item.img} alt='啵啵恰恰'></img>
                         </div>
                         <div className="Res_Left_TextSection">
                             <div className="Res_Left_Title"><b></b>{item.resName}</div>
@@ -56,7 +81,7 @@ const ResSection = () => {
                             </div>
                         </div>
                         <div className="Res_MapSection">
-                            {/* <input type="text" placeholder="title" value={inputValue} onChange={(e) => setInputValue(e.target.value)} /> */}
+                            <GoogleMapAPI address={item.address} />
                         </div>
                     </div>
                 </div>

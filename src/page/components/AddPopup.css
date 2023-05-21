@@ -1,14 +1,41 @@
+/* 1.全部 */
 .AddPopupSection {
     font-size: 22px;
 }
 
+/* 2.上半部 */
 .AddPopupTopSection {
     position: relative;
-    background-color: burlywood;
+    background-color: rgba(0, 0, 0, 0.293);
     top: -26px;
     height: 60px;
     border: none;
     border-bottom: 1px solid #000000;
+}
+
+/* 3.下半部 */
+.AddPopupInputSection {
+    display: block;
+}
+
+/* 4.下半部左 */
+.AddPopupInputLeft {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.AddPopupLabel {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+/* 5.下半部右 */
+.AddPopupInputRight {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    position: relative;
 }
 
 .AddPopupTopSection button:hover {
@@ -39,32 +66,14 @@
     mix-blend-mode: normal;
 }
 
-.AddPopupInputSection {
-    display: block;
-    /* justify-content: space-between; */
-    background-color: rgba(0, 255, 255, 0.13);
-}
-
-.AddPopupInputLeft {
-    display: inline-block;
-    background-color: aquamarine;
-    width: 50%;
-    vertical-align: top;
-}
-
-.AddPopupInputRight {
-    display: inline-block;
-    background-color: bisque;
-    width: 50%;
-    vertical-align: top;
-    position: relative;
-}
 
 
-.AddPopupLabel {
-    margin-top: 15px;
-    margin-left: 30px;
-}
+
+
+
+
+
+
 
 .AddPopupInput {
     font-size: 22px;
