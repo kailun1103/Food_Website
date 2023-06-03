@@ -1,10 +1,30 @@
+.PopupBackgroud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.PopupWindow {
+    width: 60%;
+    height: 70%;
+    background-color: rgb(211, 208, 208);
+    border-radius: 10px;
+}
+
 /* 1.全部 */
-.AddPopupSection {
+.PopupSection {
     font-size: 22px;
 }
 
 /* 2.上半部 */
-.AddPopupTopSection {
+.PopupTopSection {
     position: relative;
     background-color: rgba(0, 0, 0, 0.293);
     top: -26px;
@@ -14,43 +34,43 @@
 }
 
 /* 3.下半部 */
-.AddPopupInputSection {
+.PopupInputSection {
     display: block;
 }
 
 /* 4.下半部左 */
-.AddPopupInputLeft {
+.PopupInputLeft {
     display: inline-block;
     width: 50%;
     vertical-align: top;
 }
 
-.AddPopupLabel {
+.PopupLabel {
     margin-top: 10px;
     margin-left: 30px;
 }
 
 /* 5.下半部右 */
-.AddPopupInputRight {
+.PopupInputRight {
     display: inline-block;
     width: 50%;
     vertical-align: top;
     position: relative;
 }
 
-.AddPopupTopSection button:hover {
+.PopupTopSection button:hover {
     filter: brightness(120%);
     transition: filter 0.3s ease-in-out;
     mix-blend-mode: difference;
 }
 
-.AddPopupTopSection h3 {
+.PopupTopSection h3 {
     position: relative;
     top: 10px;
     left: 15px;
 }
 
-.AddPopupTopSection button {
+.PopupTopSection button {
     background-image: url('file:///E:/KaiLun_Secret/程式語言啦幹/Side%20Project/food_website/src/data/cancel_button.png');
     background-repeat: no-repeat;
     background-size: 27px;
@@ -75,7 +95,7 @@
 
 
 
-.AddPopupInput {
+.PopupInput {
     font-size: 22px;
     margin-top: 10px;
     margin-left: 10px;
@@ -85,22 +105,3 @@
     max-width: 250px;
     max-height: 340px;
 }
-
-
-
-
-
-
-/* .AddPopupInput {
-    margin-top: 30px;
-    margin-left: 10px;
-} */
-
-
-
-/* .AddPopupPic {
-    position: relative;
-    top: -324px;
-    left: 400px;
-    right: 5px;
-} */

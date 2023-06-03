@@ -1,3 +1,64 @@
+/* [四個區域] */
+/* *全區域 */
+.Res_Box {
+    border-top: 1px solid #726e6e;
+    background-color: rgba(193, 188, 188, 0.5);
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    top: 30vh;
+    width: 91%;
+    height: 280px;
+}
+
+/* 一、圖片區域 */
+.Res_PicSection {
+    display: flex;
+    height: 100%;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+}
+
+.Res_PicSection.darken {
+    pointer-events: none;
+    z-index: -1;
+}
+
+.Res_PicSection img {
+    max-height: 80%;
+    max-width: 80%;
+}
+
+/* 二、左邊資訊 */
+.Res_LeftSection {
+    position: relative;
+    width: 25%;
+    height: 85%;
+}
+
+/* 三、右邊區域 */
+.Res_RightSection {
+    position: relative;
+    width: 25%;
+}
+
+/* 四、地圖區域 */
+.Res_MapSection {
+    position: relative;
+    width: 25%;
+}
+
+/* [4個區域的細節] */
+.Res_Title {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+
+
 #RecommendSection {
     width: 100%;
     height: 3000px;
@@ -15,48 +76,18 @@
 }
 
 
-.Res_Box {
-    border-top: 1px solid #726e6e;
-    display: flex;
-    margin: 0 auto;
-    position: relative;
-    top: 30vh;
-    width: 91%;
-    height: 280px;
-}
+
 
 .Res_Box.darken {
     pointer-events: none;
     z-index: -1;
 }
 
-.Res_PicSection {
-    display: flex;
-    height: 100%;
-    width: 25%;
-    background-color: aqua;
-    align-items: center;
-    justify-content: center;
-}
 
-.Res_PicSection.darken {
 
-    pointer-events: none;
-    z-index: -1;
-}
 
-.Res_PicSection img {
-    max-height: 80%;
-}
 
-.Res_Left_TextSection {
-    background-color: rgb(191, 191, 27);
-    position: relative;
-    width: 25%;
-    height: 85%;
-}
-
-.Res_Left_TextSection.darken {
+.Res_LeftSection.darken {
 
     pointer-events: none;
     z-index: -1;
@@ -96,11 +127,7 @@
     background-color: coral;
 }
 
-.Res_Right_TextSection {
-    background-color: rgb(191, 27, 158);
-    position: relative;
-    width: 25%;
-}
+
 
 .Res_Right_TextSection.darken {
 
@@ -122,23 +149,20 @@
     font-size: 20px;
 }
 
-.Res_Right_CommentRollBox {
+.Res_CommentRollBox {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
     overflow: auto;
     height: 70%;
     width: 95%;
-    position: relative;
-    background-color: blue;
-    top: 10%;
-    left: 4%;
+    background-color: rgb(79, 79, 81);
     font-size: 20px;
 
 }
 
-.Res_MapSection {
-    background-color: rgba(5, 153, 44, 0.611);
-    position: relative;
-    width: 25%;
-}
+
 
 .Res_MapSection.darken {
     pointer-events: none;

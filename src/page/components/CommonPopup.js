@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import './CommonPopup.css';
+import firebase from '../../utils/FireBase';
+import 'firebase/compat/database';
 
-const CommonPopup = ({ id }) => {
-    const res_API = `http://localhost:8000/menu/${id}`;
+const CommonPopup = ({ id, onClose }) => { // Updated prop name from onclose to onClose
+    const firebaseRef = firebase.database().ref('menu').child(id);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -10,50 +12,56 @@ const CommonPopup = ({ id }) => {
         const score = document.getElementById('score').value;
         const common = document.getElementById('common').value;
 
-        fetch(res_API)
-            .then((res) => res.json())
-            .then((data) => {
-                const newData = {
-                    ...data,
-                    score: [...data.score, score],
-                    common: [...data.common, common],
-                };
+        firebaseRef
+            .once('value')
+            .then((snapshot) => {
+                const data = snapshot.val();
+                if (data) {
+                    const newData = {
+                        ...data,
+                        score: [...data.score, score],
+                        common: [...data.common, common],
+                    };
 
-                fetch(res_API, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(newData),
-                })
-                    .then((res) => {
-                        // 在提交成功后进行操作，例如清空输入框或关闭窗口
-                        document.getElementById('score').value = '';
-                        document.getElementById('common').value = '';
-                        alert('提交成功');
-                    })
-                    .catch((error) => {
-                        // 处理提交数据时可能出现的错误
-                        console.error(error);
-                        alert('提交失败');
-                    });
+                    return firebaseRef.update(newData);
+                } else {
+                    throw new Error('Data not found');
+                }
+            })
+            .then(() => {
+                document.getElementById('score').value = '';
+                document.getElementById('common').value = '';
+                alert('提交成功');
             })
             .catch((error) => {
-                // 处理获取数据时可能出现的错误
                 console.error(error);
-                alert('获取数据失败');
+                alert('操作失败');
             });
-
     };
+
+    const handleClose = () => {
+        onClose(false);
+    };
+
     return (
         <div>
-            <h2>悬浮式窗口标题</h2>
-            <form onSubmit={handleSubmit}>
-                <p>悬浮式窗口内容</p>
-                <input type="text" placeholder="score" id="score" />
-                <input type="text" placeholder="common" id="common" />
-                <button type="submit">提交</button>
-            </form>
+            <div className="PopupSection">
+                <div className="PopupTopSection">
+                    <h3>修改餐廳資料</h3>
+                    <button onClick={handleClose}></button>
+                </div>
+                <div className="PopupInputSection">
+                    <form onSubmit={handleSubmit}>
+                        <div className="PopupInputLeft">
+                            <div className="PopupLabel">評分: <input className="PopupInput" type="text" placeholder="score" id="score" /></div>
+                            <div className="PopupLabel">評論: <input className="PopupInput" type="text" placeholder="common" id="common" /></div>
+                        </div>
+                        <button className="PopupLabel" type="submit">
+                            提交
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };

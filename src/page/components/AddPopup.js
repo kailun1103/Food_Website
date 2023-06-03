@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './AddPopup.css';
+import './Popup.css';
 import firebase from '../../utils/FireBase';
 import 'firebase/compat/database';
 
@@ -10,7 +10,7 @@ const AddPopup = ({ onClose }) => {
     const [address, setAddress] = useState('');
     const [intro, setIntro] = useState('');
     const [image, setImage] = useState('');
-    // 用于追踪資料庫的key值
+    // 追踪資料庫的key值
     const [menuCount, setMenuCount] = useState(0);
     useEffect(() => {
         const firebaseRef = firebase.database().ref('menu');
@@ -97,25 +97,25 @@ const AddPopup = ({ onClose }) => {
     };
 
     return <div>
-        <div classname="AddPopupSection">
-            <div className='AddPopupTopSection'>
+        <div classname="PopupSection">
+            <div className='PopupTopSection'>
                 <h3>新增餐廳資料</h3>
                 <button onClick={handleClose}></button>
             </div>
-            <div className='AddPopupInputSection'>
+            <div className='PopupInputSection'>
                 <form onSubmit={handleSubmit}>
-                    <div className='AddPopupInputLeft'>
-                        <div className='AddPopupLabel'>餐廳:<input type="text" className='AddPopupInput' placeholder="Restaurant" value={resName} onChange={(e) => setResName(e.target.value)} /></div>
-                        <div className='AddPopupLabel'>分類:<input type="text" className='AddPopupInput' placeholder="classification" value={classification} onChange={(e) => setClassification(e.target.value)} /></div>
-                        <div className='AddPopupLabel'>地址:<input type="text" className='AddPopupInput' placeholder="address" value={address} onChange={(e) => setAddress(e.target.value)} /></div>
-                        <div className='AddPopupLabel'>簡介:<input type="text" className='AddPopupInput' style={{ paddingBottom: "170px" }} value={intro} placeholder="Introduce" onChange={(e) => setIntro(e.target.value)} /></div>
+                    <div className='PopupInputLeft'>
+                        <div className='PopupLabel'>餐廳:<input type="text" className='PopupInput' placeholder="Restaurant" value={resName} onChange={(e) => setResName(e.target.value)} /></div>
+                        <div className='PopupLabel'>分類:<input type="text" className='PopupInput' placeholder="classification" value={classification} onChange={(e) => setClassification(e.target.value)} /></div>
+                        <div className='PopupLabel'>地址:<input type="text" className='PopupInput' placeholder="address" value={address} onChange={(e) => setAddress(e.target.value)} /></div>
+                        <div className='PopupLabel'>簡介:<input type="text" className='PopupInput' style={{ paddingBottom: "170px" }} value={intro} placeholder="Introduce" onChange={(e) => setIntro(e.target.value)} /></div>
                     </div>
-                    <div className='AddPopupInputRight'>
+                    <div className='PopupInputRight'>
                         <form action="http://localhost:8000/image" enctype="multipart/form-data">
-                            <input className='AddPopupLabel' type="file" id="showPic" accept="image/gif, image/jpeg, image/png" />
-                            <img className='AddPopupLabel' id="previewPic" src="#" />
+                            <input className='PopupLabel' type="file" id="showPic" accept="image/gif, image/jpeg, image/png" />
+                            <img className='PopupLabel' id="previewPic" src="#" />
                         </form>
-                        <button className='AddPopupLabel' type="submit">提交</button>
+                        <button className='PopupLabel' type="submit">提交</button>
                         <button type="button" onClick={handleCancel}>取消</button>
                     </div>
                 </form>

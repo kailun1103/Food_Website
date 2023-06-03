@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Explore.css';
+import '../components/Popup.css';
 import AddPopup from '../components/AddPopup';
 import ResSection from '../components/ResSection';
 
@@ -19,8 +20,8 @@ const Explore = () => {
                 <ResSection className={`ResSection ${addPopup ? "darken" : ""}`} />
             </div>
             {addPopup && (
-                <div className="AddPopupBackgroud">
-                    <div className="AddPopupSection">
+                <div className="PopupBackgroud">
+                    <div className="PopupWindow">
                         <AddPopup onClose={handleClose} />
                     </div>
                 </div>

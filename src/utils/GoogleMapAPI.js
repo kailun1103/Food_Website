@@ -7,9 +7,11 @@ const GoogleMapAPI = ({ address }) => {
         lat: 40.7128,
         lng: -74.0060,
     });
+    const [mapKey, setMapKey] = useState(0);
+    const [destinationMarker, setDestinationMarker] = useState(null);
 
     const mapOptions = {
-        zoom: 10,
+        zoom: 15,
     };
 
     useEffect(() => {
@@ -18,6 +20,11 @@ const GoogleMapAPI = ({ address }) => {
                 const results = await geocodeByAddress(address);
                 const latLng = await getLatLng(results[0]);
                 setMapCenter(latLng);
+                setDestinationMarker({
+                    lat: latLng.lat,
+                    lng: latLng.lng,
+                });
+                setMapKey((prevKey) => prevKey + 1); // Update the key to trigger re-rendering of the map component
             } catch (error) {
                 console.error('Error:', error);
             }
@@ -34,11 +41,24 @@ const GoogleMapAPI = ({ address }) => {
                 }}
                 center={mapCenter}
                 defaultZoom={mapOptions.zoom}
+                key={mapKey} // Use the mapKey as the key prop to trigger re-rendering of the map component
             >
-                {/* Add any map components, such as markers or overlays, here */}
+                {destinationMarker && (
+                    <Marker
+                        lat={destinationMarker.lat}
+                        lng={destinationMarker.lng}
+                    />
+                )}
             </GoogleMapReact>
         </div>
     );
 };
+
+const Marker = () => <div style={{
+    width: '20px',
+    height: '20px',
+    borderRadius: '50%',
+    backgroundColor: 'red',
+}} />;
 
 export default GoogleMapAPI;

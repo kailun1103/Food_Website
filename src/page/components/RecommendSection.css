@@ -29,7 +29,7 @@
     display: flex;
     height: 100%;
     width: 25%;
-    background-color: aqua;
+    /* background-color: aqua; */
     align-items: center;
     justify-content: center;
 }

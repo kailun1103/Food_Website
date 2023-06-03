@@ -6,14 +6,18 @@ import GoogleMapAPI from '../../utils/GoogleMapAPI';
 import 'firebase/compat/database';
 import '../others/Explore.css';
 import './ResSection.css';
+import './Popup.css';
 
 const ResSection = () => {
     const [menu, setMenu] = useState(null);
-    const [inputValue, setInputValue] = useState('');
     const [modifyPopup, setModifyPopup] = useState(false);
     const [commonPopup, setCommonPopup] = useState(false);
-    const [selectedId, setSelectedId] = useState(null);
+    const [selectedKey, setSelectedKey] = useState(null);
 
+    const handleClose = () => {
+        setModifyPopup(false);
+        setCommonPopup(false);
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,32 +53,32 @@ const ResSection = () => {
 
     return (
         <div>
-            {menu && menu.map((item) => (
-                <div key={item.id}>
+            {menu && menu.map((item, key) => (
+                <div key={key}>
                     <div className={`Res_Box ${modifyPopup ? 'darken' : ''}`}>
                         <div className="Res_PicSection">
                             <img src={item.img} alt='啵啵恰恰'></img>
                         </div>
-                        <div className="Res_Left_TextSection">
-                            <div className="Res_Left_Title"><b></b>{item.resName}</div>
-                            <div className="Res_Left_Classification"><b>分類: </b>{item.classification}</div>
-                            <div className="Res_Left_IntroduceSection"><b>簡介: </b>{item.intro}</div>
-                            <div className='Res_Left_ButtonSection'>
+                        <div className="Res_LeftSection">
+                            <div className="Res_Title" style={{ fontSize: "30psx" }}><b>{item.resName}</b></div>
+                            <div className="Res_Title"><b>分類: </b>{item.classification}</div>
+                            <div className="Res_Title"><b>地址: </b>{item.address}</div>
+                            <div className="Res_Title"><b>簡介: </b>{item.intro}</div>
+                            <div className='Res_Title'>
                                 <button className='ModifyPopupButton' onClick={() => {
-                                    setSelectedId(item.id);
+                                    setSelectedKey(key);
                                     setModifyPopup(true);
                                 }}>修改</button>
                                 <button className='CommonPopupButton' onClick={() => {
-                                    setSelectedId(item.id);
+                                    setSelectedKey(key);
                                     setCommonPopup(true);
                                 }}>評論</button>
                             </div>
                         </div>
-
-                        <div className="Res_Right_TextSection">
-                            <div className="Res_Right_Score"><b>評分: </b>{(item.score?.reduce((a, b) => a + b, 0) / item.score?.length || 0).toFixed(1)}</div>
-                            <div className="Res_Right_CommentTitle"><b>評論: </b></div>
-                            <div className="Res_Right_CommentRollBox">
+                        <div className="Res_RightSection">
+                            <div className="Res_Title"><b>評分: </b>{(item.score?.reduce((a, b) => a + b, 0) / item.score?.length || 0).toFixed(1)}</div>
+                            <div className="Res_Title"><b>評論: </b></div>
+                            <div className="Res_CommentRollBox">
                                 {item.common.map((comment, index) => (
                                     <div key={index}>{comment}</div>
                                 ))}
@@ -87,18 +91,16 @@ const ResSection = () => {
                 </div>
             ))}
             {modifyPopup && (
-                <div className="ModifyPopupBackgroud">
-                    <div className="ModifyPopupSection">
-                        <ModifyPopup id={selectedId} />
-                        <button onClick={() => setModifyPopup(false)}>关闭</button>
+                <div className="PopupBackgroud">
+                    <div className="PopupWindow">
+                        <ModifyPopup id={selectedKey} onClose={handleClose} />
                     </div>
                 </div>
             )}
             {commonPopup && (
-                <div className="CommonPopupBackgroud">
-                    <div className="CommonPopupSection">
-                        <CommonPopup id={selectedId} />
-                        <button onClick={() => setCommonPopup(false)}>关闭</button>
+                <div className="PopupBackgroud">
+                    <div className="PopupWindow">
+                        <CommonPopup id={selectedKey} onClose={handleClose} />
                     </div>
                 </div>
             )}
