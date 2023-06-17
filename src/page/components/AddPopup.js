@@ -12,6 +12,9 @@ const AddPopup = ({ onClose }) => {
     const [image, setImage] = useState('');
     // 追踪資料庫的key值
     const [menuCount, setMenuCount] = useState(0);
+    // 追蹤圖片是否input了
+    const [isImageSelected, setIsImageSelected] = useState(false); // Track if image is selected
+
     useEffect(() => {
         const firebaseRef = firebase.database().ref('menu');
         firebaseRef.once('value', (snapshot) => {
@@ -23,7 +26,7 @@ const AddPopup = ({ onClose }) => {
     const handleSubmit = (event) => {
         event.preventDefault(); // 阻止表單默認的提交行為
         // 如果三個值有任何一個是空的，則跳出 alert 視窗，提示使用者要填寫所有欄位
-        if (!resName || !classification || !intro || !address) {
+        if (!resName || !classification || !intro || !address || !image) {
             window.alert('請填寫所有欄位');
             return;
         }
@@ -75,6 +78,7 @@ const AddPopup = ({ onClose }) => {
             reader.addEventListener('load', () => {
                 previewPic.src = reader.result;
                 setImage(previewPic.src); // 將Base64字串存入image中
+                setIsImageSelected(true);
             }, false);
 
             if (file) {
@@ -88,35 +92,46 @@ const AddPopup = ({ onClose }) => {
             };
         }
     }, []);
-
+    // 取消圖片
     const handleCancel = () => {
         const showPic = document.getElementById('showPic');
         const previewPic = document.getElementById('previewPic');
-        showPic.value = '';
-        previewPic.src = '';
+
+        // Reset the input value
+        if (showPic) {
+            showPic.value = '';
+        }
+
+        // Reset the preview image source
+        if (previewPic) {
+            previewPic.src = '';
+        }
+
+        setIsImageSelected(false);
     };
 
     return <div>
-        <div classname="PopupSection">
+        <div className="PopupSection">
             <div className='PopupTopSection'>
                 <h3>新增餐廳資料</h3>
-                <button onClick={handleClose}></button>
+                <button className='CancelButton' onClick={handleClose}></button>
             </div>
             <div className='PopupInputSection'>
                 <form onSubmit={handleSubmit}>
                     <div className='PopupInputLeft'>
-                        <div className='PopupLabel'>餐廳:<input type="text" className='PopupInput' placeholder="Restaurant" value={resName} onChange={(e) => setResName(e.target.value)} /></div>
-                        <div className='PopupLabel'>分類:<input type="text" className='PopupInput' placeholder="classification" value={classification} onChange={(e) => setClassification(e.target.value)} /></div>
-                        <div className='PopupLabel'>地址:<input type="text" className='PopupInput' placeholder="address" value={address} onChange={(e) => setAddress(e.target.value)} /></div>
-                        <div className='PopupLabel'>簡介:<input type="text" className='PopupInput' style={{ paddingBottom: "170px" }} value={intro} placeholder="Introduce" onChange={(e) => setIntro(e.target.value)} /></div>
+                        <div style={{ display: 'flex' }} className='PopupLabel'>餐廳:<input type="text" className='PopupInput' placeholder="Restaurant" value={resName} onChange={(e) => setResName(e.target.value)} /></div>
+                        <div style={{ display: 'flex' }} className='PopupLabel'>分類:<input type="text" className='PopupInput' placeholder="classification" value={classification} onChange={(e) => setClassification(e.target.value)} /></div>
+                        <div style={{ display: 'flex' }} className='PopupLabel'>地址:<input type="text" className='PopupInput' placeholder="address" value={address} onChange={(e) => setAddress(e.target.value)} /></div>
+                        <div style={{ display: 'flex' }} className='PopupLabel'>簡介:<input type="text" className='PopupInput PopupInputIntro' placeholder="Introduce" value={intro} onChange={(e) => setIntro(e.target.value)} /></div>
                     </div>
                     <div className='PopupInputRight'>
                         <form action="http://localhost:8000/image" enctype="multipart/form-data">
-                            <input className='PopupLabel' type="file" id="showPic" accept="image/gif, image/jpeg, image/png" />
-                            <img className='PopupLabel' id="previewPic" src="#" />
+                            <div style={{ display: 'flex' }} className='PopupLabel'>圖片: <input type="file" className='PopupInputImg' id="showPic" accept="image/gif, image/jpeg, image/png" />
+                                {isImageSelected && <button className='CancelButton2' type="button" onClick={handleCancel}></button>}
+                            </div>
+                            <img className='PopupLabel' id="previewPic" />
                         </form>
-                        <button className='PopupLabel' type="submit">提交</button>
-                        <button type="button" onClick={handleCancel}>取消</button>
+                        <button className='PopupButton' type="submit">提交整筆資料</button>
                     </div>
                 </form>
             </div>

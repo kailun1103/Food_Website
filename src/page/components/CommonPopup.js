@@ -1,26 +1,28 @@
 import { useEffect, useState } from 'react';
-import './CommonPopup.css';
+import './Popup.css';
+import GoogleMapAPI from '../../utils/GoogleMapAPI';
 import firebase from '../../utils/FireBase';
 import 'firebase/compat/database';
 
-const CommonPopup = ({ id, onClose }) => { // Updated prop name from onclose to onClose
+const CommonPopup = ({ id, onClose }) => {
     const firebaseRef = firebase.database().ref('menu').child(id);
+    const [score, setScore] = useState('10');
+    const [common, setCommon] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const score = document.getElementById('score').value;
-        const common = document.getElementById('common').value;
 
         firebaseRef
             .once('value')
             .then((snapshot) => {
                 const data = snapshot.val();
                 if (data) {
+                    const newScore = [...data.score, score];
+                    const newCommon = [...data.common, common];
                     const newData = {
                         ...data,
-                        score: [...data.score, score],
-                        common: [...data.common, common],
+                        score: newScore,
+                        common: newCommon,
                     };
 
                     return firebaseRef.update(newData);
@@ -29,13 +31,19 @@ const CommonPopup = ({ id, onClose }) => { // Updated prop name from onclose to 
                 }
             })
             .then(() => {
-                document.getElementById('score').value = '';
-                document.getElementById('common').value = '';
-                alert('提交成功');
+                console.log('資料寫入成功');
+                const confirmPopup = window.confirm(
+                    `請確認以下資料：\n\n評分:  ${score}\n評論:  ${common}\n`
+                );
+                if (confirmPopup) {
+                    window.alert('提交成功');
+                    onClose();
+                } else {
+                    return;
+                }
             })
             .catch((error) => {
-                console.error(error);
-                alert('操作失败');
+                console.error('資料寫入失敗:', error);
             });
     };
 
@@ -48,17 +56,15 @@ const CommonPopup = ({ id, onClose }) => { // Updated prop name from onclose to 
             <div className="PopupSection">
                 <div className="PopupTopSection">
                     <h3>修改餐廳資料</h3>
-                    <button onClick={handleClose}></button>
+                    <button className="CancelButton" onClick={handleClose}></button>
                 </div>
                 <div className="PopupInputSection">
                     <form onSubmit={handleSubmit}>
                         <div className="PopupInputLeft">
-                            <div className="PopupLabel">評分: <input className="PopupInput" type="text" placeholder="score" id="score" /></div>
-                            <div className="PopupLabel">評論: <input className="PopupInput" type="text" placeholder="common" id="common" /></div>
+                            <div style={{ display: 'flex' }} className="PopupLabel">評分: {score}<input type="range" className="PopupRange" placeholder="score" id="score" min="0" max="10" value={score} onChange={(event) => setScore(event.target.value)} /></div>
+                            <div style={{ display: 'flex' }} className="PopupLabel">評論:<input type="text" className="PopupInput PopupInputCommon" placeholder="common" id="common" onChange={(event) => setCommon(event.target.value)} /></div>
+                            <button className="PopupButton" type="submit">提交</button>
                         </div>
-                        <button className="PopupLabel" type="submit">
-                            提交
-                        </button>
                     </form>
                 </div>
             </div>

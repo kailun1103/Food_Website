@@ -34,7 +34,7 @@ const GoogleMapAPI = ({ address }) => {
     }, [address]);
 
     return (
-        <div style={{ height: '400px', width: '100%' }}>
+        <div style={{ height: '100%', width: '100%' }}>
             <GoogleMapReact
                 bootstrapURLKeys={{
                     key: 'AIzaSyDNDPLcHPkxwljg7ca3UPjjkHy0qNIQhdc',

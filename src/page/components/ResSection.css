@@ -1,4 +1,9 @@
 /* [四個區域] */
+.Res_Box.darken {
+    pointer-events: none;
+    z-index: -1;
+}
+
 /* *全區域 */
 .Res_Box {
     border-top: 1px solid #726e6e;
@@ -37,116 +42,22 @@
     height: 85%;
 }
 
-/* 三、右邊區域 */
-.Res_RightSection {
-    position: relative;
-    width: 25%;
+.Res_BigTitle {
+    font-size: 28px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
-/* 四、地圖區域 */
-.Res_MapSection {
-    position: relative;
-    width: 25%;
-}
-
-/* [4個區域的細節] */
 .Res_Title {
     font-size: 18px;
     margin-top: 10px;
     margin-left: 10px;
 }
 
-
-
-
-#RecommendSection {
-    width: 100%;
-    height: 3000px;
-    background-color: rgba(32, 218, 63, 0.5);
-}
-
-.RecommendText {
+/* 三、右邊區域 */
+.Res_RightSection {
     position: relative;
-    left: 5%;
-    top: 4%;
-    width: 90%;
-    font-size: 100px;
-    z-index: 9;
-    font-weight: 550;
-}
-
-
-
-
-.Res_Box.darken {
-    pointer-events: none;
-    z-index: -1;
-}
-
-
-
-
-
-.Res_LeftSection.darken {
-
-    pointer-events: none;
-    z-index: -1;
-}
-
-.Res_Left_Title {
-    position: relative;
-    top: 5%;
-    left: 4%;
-    font-size: 40px;
-}
-
-.Res_Left_Classification {
-    position: relative;
-    top: 8%;
-    left: 4%;
-    font-size: 20px;
-}
-
-.Res_Left_IntroduceSection {
-    position: relative;
-    top: 10%;
-    left: 4%;
-    height: 62%;
-    width: 96%;
-    font-size: 20px;
-    word-wrap: break-word;
-}
-
-.Res_Left_IntroduceTitle {
-    position: relative;
-    font-size: 20px;
-}
-
-.Res_Left_ButtonSection {
-    position: relative;
-    background-color: coral;
-}
-
-
-
-.Res_Right_TextSection.darken {
-
-    pointer-events: none;
-    z-index: -1;
-}
-
-.Res_Right_Score {
-    position: relative;
-    top: 5%;
-    left: 4%;
-    font-size: 20px;
-}
-
-.Res_Right_CommentTitle {
-    position: relative;
-    top: 8%;
-    left: 4%;
-    font-size: 20px;
+    width: 25%;
 }
 
 .Res_CommentRollBox {
@@ -157,16 +68,8 @@
     overflow: auto;
     height: 70%;
     width: 95%;
-    background-color: rgb(79, 79, 81);
+    background-color: rgb(220, 225, 224);
     font-size: 20px;
-
-}
-
-
-
-.Res_MapSection.darken {
-    pointer-events: none;
-    z-index: -1;
 }
 
 .ModifyPopupButton {
@@ -181,40 +84,90 @@
     width: 100px;
 }
 
-.CommonPopupBackgroud {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+/* 四、地圖區域 */
+.Res_MapSection {
+    position: relative;
+    width: 25%;
 }
 
-.CommonPopupSection {
-    width: 50%;
-    height: 60%;
-    background-color: white;
+
+/* .Res_LeftSection.darken {
+    pointer-events: none;
+    z-index: -1;
+} */
+
+
+/* .Res_MapSection.darken {
+    pointer-events: none;
+    z-index: -1;
+} */
+
+
+.Res_Button {
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    border-radius: 9px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
-.ModifyPopupBackgroud {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+.Res_Button:hover {
+    background-color: #ffffff55;
 }
 
-.ModifyPopupSection {
-    width: 50%;
-    height: 60%;
-    background-color: white;
+.Res_Button_RWD {
+    display: none;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 80px;
+    height: 30px;
+    position: relative;
+    border-radius: 9px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.Res_Button_RWD:hover {
+    background-color: #ffffff55;
+}
+
+@media (max-width:800px) {
+
+    /* *全區域 */
+
+    /* 一、圖片區域 */
+    .Res_PicSection {
+        width: 50%;
+    }
+
+    /* 二、左邊資訊 */
+    .Res_LeftSection {
+        width: 50%;
+    }
+
+    .Res_Button {
+        width: 60px;
+    }
+
+    .Res_Button_RWD {
+        display: inline;
+        width: 60px;
+    }
+
+    /* 三、右邊區域 */
+    .Res_RightSection {
+        display: none;
+    }
+
+    /* 四、地圖區域 */
+    .Res_MapSection {
+        display: none;
+    }
 }

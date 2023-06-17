@@ -36,10 +36,10 @@ const ModifyPopup = ({ id, onClose }) => {
         );
         if (confirmPopup) {
             const updatedMenuItem = {
-                resName: resName,
-                classification: classification,
-                address: address,
-                intro: intro,
+                resName,
+                classification,
+                address,
+                intro,
                 img: image
             };
 
@@ -86,28 +86,27 @@ const ModifyPopup = ({ id, onClose }) => {
         <div className="PopupSection">
             <div className="PopupTopSection">
                 <h3>修改餐廳資料</h3>
-                <button onClick={handleClose}></button>
+                <button className='CancelButton' onClick={handleClose}></button>
             </div>
             <div className="PopupInputSection">
                 <form onSubmit={handleSubmit}>
                     <div className="PopupInputLeft">
-                        <div className="PopupLabel">餐廳: <input type="text" className="PopupInput" placeholder="Restaurant" value={resName} onChange={(e) => setResName(e.target.value)} /></div>
-                        <div className="PopupLabel">分類: <input type="text" className="PopupInput" placeholder="classification" value={classification} onChange={(e) => setClassification(e.target.value)} /></div>
-                        <div className="PopupLabel">地址: <input type="text" className="PopupInput" placeholder="address" value={address} onChange={(e) => setAddress(e.target.value)} /></div>
-                        <div className="PopupLabel">簡介: <input type="text" className="PopupInput" style={{ paddingBottom: '170px' }} value={intro} placeholder="Introduce" onChange={(e) => setIntro(e.target.value)} /></div>
+                        <div style={{ display: 'flex' }} className="PopupLabel">餐廳: <input type="text" className="PopupInput" placeholder="Restaurant" value={resName} onChange={(e) => setResName(e.target.value)} /></div>
+                        <div style={{ display: 'flex' }} className="PopupLabel">分類: <input type="text" className="PopupInput" placeholder="classification" value={classification} onChange={(e) => setClassification(e.target.value)} /></div>
+                        <div style={{ display: 'flex' }} className="PopupLabel">地址: <input type="text" className="PopupInput" placeholder="address" value={address} onChange={(e) => setAddress(e.target.value)} /></div>
+                        <div style={{ display: 'flex' }} className='PopupLabel'>簡介:<input type="text" className='PopupInput PopupInputIntro' placeholder="Introduce" value={intro} onChange={(e) => setIntro(e.target.value)} /></div>
                     </div>
                     <div className='PopupInputRight'>
-                        <div className="PopupLabel">圖片: </div>
-                        <input className='PopupLabel' type="file" accept="image/*" onChange={handleImageChange} />
-                        {image && <img className='PopupLabel' src={image} id="previewPic" alt="Preview" />}
-                        {image && <button type="button" onClick={handleCancel}>取消圖片</button>}
+                        <div style={{ display: 'flex' }} className="PopupLabel">圖片: <input type="file" className='PopupInputImg' accept="image/*" onChange={handleImageChange} />
+                            {image && <button className='CancelButton2' type="button" onClick={handleCancel}></button>}
+                        </div>
+                        <img className='PopupLabel' src={image} id="previewPic" />
+                        <div><button className='PopupButton' type="submit">提交整筆資料</button></div>
                     </div>
-                    <button className='PopupLabel' type="submit">提交</button>
                 </form>
             </div>
         </div>
     </div>
-
 };
 
 export default ModifyPopup;

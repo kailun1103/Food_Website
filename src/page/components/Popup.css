@@ -1,3 +1,4 @@
+/* [全區域] */
 .PopupBackgroud {
     position: fixed;
     top: 0;
@@ -18,17 +19,15 @@
     border-radius: 10px;
 }
 
-/* 1.全部 */
 .PopupSection {
     font-size: 22px;
 }
 
-/* 2.上半部 */
+/* 上半部 */
 .PopupTopSection {
     position: relative;
     background-color: rgba(0, 0, 0, 0.293);
-    top: -26px;
-    height: 60px;
+    margin-top: -26px;
     border: none;
     border-bottom: 1px solid #000000;
 }
@@ -46,7 +45,7 @@
 }
 
 .PopupLabel {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 30px;
 }
 
@@ -70,7 +69,19 @@
     left: 15px;
 }
 
-.PopupTopSection button {
+.PopupCommentRollBox {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-left: 5px;
+    overflow: auto;
+    height: 120px;
+    width: 95%;
+    background-color: rgb(220, 225, 224);
+    font-size: 20px;
+}
+
+.CancelButton {
     background-image: url('file:///E:/KaiLun_Secret/程式語言啦幹/Side%20Project/food_website/src/data/cancel_button.png');
     background-repeat: no-repeat;
     background-size: 27px;
@@ -86,22 +97,142 @@
     mix-blend-mode: normal;
 }
 
-
-
-
-
-
-
-
-
+.CancelButton2 {
+    background-image: url('file:///E:/KaiLun_Secret/程式語言啦幹/Side%20Project/food_website/src/data/cancel_button.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    margin-top: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    mix-blend-mode: normal;
+}
 
 .PopupInput {
     font-size: 22px;
-    margin-top: 10px;
+    margin-top: 2px;
     margin-left: 10px;
+    height: 30px
+}
+
+.PopupInputIntro {
+    padding-bottom: 150px;
+}
+
+.PopupInputImg {
+    margin-top: 4px;
+    margin-left: 10PX;
 }
 
 #previewPic {
     max-width: 250px;
-    max-height: 340px;
+    height: 200px;
+}
+
+
+.PopupButton {
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 200px;
+    height: 40px;
+    position: relative;
+    border-radius: 9px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.PopupButton:hover {
+    background-color: #ffffff55;
+}
+
+@media (max-height: 633px) {
+    .PopupInputIntro {
+        padding-bottom: 100px;
+    }
+}
+
+@media (max-height: 560px) {
+    .PopupInputIntro {
+        padding-bottom: 50px;
+    }
+
+    #previewPic {
+        height: 15 0px;
+    }
+}
+
+
+@media (max-width: 1250px) {
+    .PopupWindow {
+        margin-top: 100px;
+        margin-bottom: 30px;
+        width: 90%;
+        height: 85%;
+    }
+
+    .PopupLabel {
+        margin-left: 30px;
+        margin-top: 10 px;
+        font-size: 18px;
+    }
+
+    .PopupInput {
+        font-size: 18px;
+        width: 300px;
+        height: 25px;
+    }
+
+    .PopupRange {
+        font-size: 18px;
+        width: 280px;
+        height: 25px;
+    }
+
+    .PopupInputLeft {
+        width: 90%;
+    }
+
+    .PopupInputRight {
+        display: inline;
+    }
+
+
+    .PopupInputIntro {
+        padding-bottom: 3px;
+    }
+
+    #previewPic {
+        height: 200px;
+    }
+
+    #previewPic {
+        height: 150px;
+    }
+
+    .PopupInputCommon {
+        padding-bottom: 100px;
+    }
+
+    .PopupMapSection {
+        margin-top: 20px;
+        height: 200px;
+        width: 100%;
+    }
+}
+
+@media (max-height: 650px) and (max-width: 1250px) {
+    #previewPic {
+        height: 100px;
+    }
+}
+
+@media (max-height: 590px) and (max-width: 1250px) {
+    #previewPic {
+        height: 50px;
+    }
 }
