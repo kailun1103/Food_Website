@@ -26,9 +26,9 @@
 - Google Map (api過期可能導致無法正常顯示，在此之前功能正常)
 
 ## API 
-- 使用 [Service Usage API] 管理和監控自己的應用程式對於 Google Cloud 平台上服務的使用，並且能夠適時地調整配置和配額限制，以確保應用程式的順利運行。
-- 使用 [Geocoding API]是一種地理編碼 API，可用於將地址或地名轉換為地理座標（經度和緯度）的過程，也稱為地理編碼（Geocoding）。
-- 使用 [Maps JavaScript API]是 Google 提供的一個 JavaScript API，它允許您在網頁中嵌入交互式地圖，並使用各種地圖相關功能。
+- 使用 [ #Service Usage API ] 管理和監控自己的應用程式對於 Google Cloud 平台上服務的使用，並且能夠適時地調整配置和配額限制，以確保應用程式的順利運行。
+- 使用 [ #Geocoding API ]是一種地理編碼 API，可用於將地址或地名轉換為地理座標（經度和緯度）的過程，也稱為地理編碼（Geocoding）。
+- 使用 [ #Maps JavaScript API ]是 Google 提供的一個 JavaScript API，它允許您在網頁中嵌入交互式地圖，並使用各種地圖相關功能。
 
 
 ## 如何運行
