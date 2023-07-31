@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+餐廳評論網站專案
+這是一個使用 React 框架開發的餐廳評論網站專案。該網站允許用戶查看不同餐廳的評論和評分，並提供用戶添加自己的評論的功能。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+功能特點
+用戶可以瀏覽不同餐廳的評論和評分。
+用戶可以透過搜索功能查找特定餐廳。
+用戶可以按照評分、評論數等條件對餐廳進行排序。
+用戶可以登錄並添加自己的評論。
+管理員可以管理餐廳信息和用戶評論。
+技術棧
+React
+Redux (可選，如果有使用 Redux)
+React Router (可選，如果有使用路由功能)
+HTML/CSS
+JavaScript (ES6+)
+使用 [API 名稱] 來獲取餐廳和評論數據 (可選，如果使用了外部 API)
+如何運行
+克隆這個項目到本地環境：
+bash
+Copy code
+git clone https://github.com/your-username/your-repo.git
+進入專案目錄：
+bash
+Copy code
+cd your-repo
+安裝相依套件：
+Copy code
+npm install
+運行本地開發伺服器：
+sql
+Copy code
+npm start
+打開瀏覽器，輸入以下網址來訪問網站：
+arduino
+Copy code
+http://localhost:3000
+貢獻
+如果您有興趣為這個專案做出貢獻，歡迎提交 Pull Request。我們期待您的建議和幫助，讓這個專案變得更好！
 
-## Available Scripts
+問題和反饋
+如果您在使用過程中遇到任何問題或者有任何建議，請通過 GitHub Issue 功能與我們取得聯繫。
 
-In the project directory, you can run:
+授權
+本專案採用 MIT 授權。
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
