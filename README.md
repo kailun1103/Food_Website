@@ -35,17 +35,19 @@ cd food_website
 
 ```bash
 npm install
+```
 
 4.運行本地開發伺服器：
 
 ```bash
 npm start
+```
 
 5.打開瀏覽器，輸入以下網址來訪問網站：
 
 ```bash
 http://localhost:3000/home
-
+```
 
 ## 貢獻
 
