@@ -9,8 +9,8 @@ import '../others/Explore.css';
 import './ResSection.css';
 import './Popup.css';
 
-const ResSection = () => {
-    const [menu, setMenu] = useState(null);
+const Top5 = () => {
+    const [menu, setMenu] = useState([]);
     const [modifyPopup, setModifyPopup] = useState(false);
     const [commonPopup, setCommonPopup] = useState(false);
     const [infoPopup, setInfoPopup] = useState(false);
@@ -54,9 +54,19 @@ const ResSection = () => {
         };
     }, []);
 
+    // 根据评分排序
+    const sortedMenu = menu.sort((a, b) => {
+        const avgScoreA = (Object.values(a.score).slice(1).reduce((acc, cur) => acc + parseInt(cur), 0)) / (Object.keys(a.score).length - 1);
+        const avgScoreB = (Object.values(b.score).slice(1).reduce((acc, cur) => acc + parseInt(cur), 0)) / (Object.keys(b.score).length - 1);
+        return avgScoreB - avgScoreA;
+    });
+
+    // 只选择前五个项目
+    const top5Menu = sortedMenu.slice(0, 5);
+
     return (
-        <div className='Res_Box_all'>
-            {menu && menu.map((item, key) => (
+        <div>
+            {top5Menu.map((item, key) => (
                 <div key={key}>
                     <div className={`Res_Box ${modifyPopup ? 'darken' : ''}`}>
                         <div className="Res_PicSection">
@@ -83,7 +93,7 @@ const ResSection = () => {
                             </div>
                         </div>
                         <div className="Res_RightSection">
-                            <div className="Res_Title"><b>評分: </b>{((Object.values(item.score).slice(1).reduce((a, b) => parseInt(a) + parseInt(b), 0)) / (Object.keys(item.score).length - 1)).toFixed(1)}</div>
+                            <div className="Res_Title"><b>評分: </b>{((Object.values(item.score).slice(1).reduce((acc, cur) => acc + parseInt(cur), 0)) / (Object.keys(item.score).length - 1)).toFixed(1)}</div>
                             <div className="Res_Title"><b>評論: </b></div>
                             <div className="Res_CommentRollBox">
                                 {item.common.slice(1).map((comment, index) => (
@@ -122,4 +132,4 @@ const ResSection = () => {
     );
 }
 
-export default ResSection;
+export default Top5;

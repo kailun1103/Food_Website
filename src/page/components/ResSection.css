@@ -5,6 +5,10 @@
 }
 
 /* *全區域 */
+.Res_Box_all{
+    margin-top: -150px;
+}
+
 .Res_Box {
     border-top: 1px solid #726e6e;
     background-color: rgba(193, 188, 188, 0.5);
@@ -169,5 +173,21 @@
     /* 四、地圖區域 */
     .Res_MapSection {
         display: none;
+    }
+}
+
+@media (max-width:650px) {
+    .Res_Title {
+        font-size: 16px;
+        margin-top: 2px;
+        margin-left: 8px;
+    }
+
+    .Res_Button {
+        font-size: 13px;
+    }
+
+    .Res_Button_RWD {
+        font-size: 13px;
     }
 }

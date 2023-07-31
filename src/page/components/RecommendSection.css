@@ -5,76 +5,25 @@
 }
 
 .RecommendText {
-    position: relative;
-    left: 5%;
-    top: 4%;
-    width: 90%;
+    padding-top: 90px;
+    padding-left: 100px;
+    margin-bottom: -150px;
     font-size: 100px;
-    z-index: 9;
     font-weight: 550;
 }
 
-
-.Res_Box {
-    border-top: 1px solid #726e6e;
-    display: flex;
-    margin: 0 auto;
-    position: relative;
-    top: 30vh;
-    width: 91%;
-    height: 280px;
+@media (max-width: 1000px) {
+    .RecommendText {
+        padding-top: 80px;
+        padding-left: 80px;
+        font-size: 80px;
+    }
 }
 
-.Res_PicSection {
-    display: flex;
-    height: 100%;
-    width: 25%;
-    /* background-color: aqua; */
-    align-items: center;
-    justify-content: center;
-}
-
-.Res_PicSection img {
-    max-height: 80%;
-}
-
-.Res_Left_TextSection {
-    background-color: rgb(191, 191, 27);
-    position: relative;
-    width: 50%;
-}
-
-.Res_Left_Title {
-    position: relative;
-    top: 5%;
-    left: 4%;
-    font-size: 40px;
-}
-
-.Res_Left_Classification {
-    position: relative;
-    top: 8%;
-    left: 4%;
-    font-size: 20px;
-}
-
-.Res_Left_IntroduceSection {
-    position: relative;
-    top: 10%;
-    left: 4%;
-    height: 62%;
-    width: 96%;
-    font-size: 20px;
-    word-wrap: break-word;
-}
-
-.Res_Left_IntroduceTitle {
-    position: relative;
-    font-size: 20px;
-}
-
-.Res_MapSection {
-    background-color: rgba(5, 153, 44, 0.611);
-    position: relative;
-    width: 25%;
+@media (max-width: 500px) {
+    .RecommendText {
+        padding-top: 50px;
+        padding-left: 50px;
+        font-size: 70px;
+    }
 }

@@ -12,11 +12,11 @@ const WelcomeSection = () => {
     }
     return <div>
         <div className="WelcomeSection">
-            <div className="MiddleText">聽說政大是美食沙漠?</div>
-            <div className='MiddleText2' style={{ top: '11%' }}>
+            <div className="MiddleText_Title">聽說政大是美食沙漠?</div>
+            <div className='MiddleText_Text'>
                 <p>帶你尋找政大私藏美食!</p>
             </div>
-            <div className='MiddleText2' style={{ top: '7%' }}>
+            <div className='MiddleText_Text'>
                 <p>點以下按鈕帶你探索</p>
             </div>
             <button className='MiddleButton' onClick={movepage2}>

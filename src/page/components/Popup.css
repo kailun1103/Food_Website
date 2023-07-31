@@ -105,6 +105,7 @@
     width: 30px;
     height: 30px;
     margin-top: 6px;
+    margin-left: 0px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -183,13 +184,13 @@
 
     .PopupInput {
         font-size: 18px;
-        width: 300px;
-        height: 25px;
+        width: 200px;
+        height: 20px;
     }
 
     .PopupRange {
         font-size: 18px;
-        width: 280px;
+        width: 200px;
         height: 25px;
     }
 
@@ -222,6 +223,10 @@
         margin-top: 20px;
         height: 200px;
         width: 100%;
+    }
+
+    .CancelButton2 {
+        margin-left: -50px;
     }
 }
 
