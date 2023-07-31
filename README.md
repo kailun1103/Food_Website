@@ -2,6 +2,12 @@
 
 這是一個使用 React 框架開發的餐廳評論網站專案。該網站允許用戶查看不同餐廳的評論和評分，並提供用戶添加自己的評論、評分的功能。
 
+## 影片展示
+
+[![影片展示](https://img.youtube.com/vi/VvKFSDbbvzY/0.jpg)](https://www.youtube.com/watch?v=VvKFSDbbvzY)
+
+（點擊圖片觀看影片）
+
 ## 功能特點
 
 - 用戶可以瀏覽不同餐廳的評論和評分以及介紹。
