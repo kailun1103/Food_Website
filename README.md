@@ -22,12 +22,14 @@
 1. 克隆這個項目到本地環境：
 
 ```bash
-git clone 'https://github.com/kailun1103/Food_Website.git'
+git clone https://github.com/kailun1103/Food_Website.git
+```
 
 2. 進入專案目錄：
 
 ```bash
 cd food_website
+```
 
 3. 安裝相依套件：
 
