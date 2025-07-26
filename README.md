@@ -1,76 +1,141 @@
-# 餐廳評論網站專案
+# Food Review Website
 
-這是一個使用 React 框架開發的餐廳評論網站專案。該網站允許用戶查看不同餐廳的評論和評分，並提供用戶添加自己的評論、評分的功能。
+A React‑based restaurant review platform where users can browse, rate, and review restaurants, as well as add and manage restaurant entries.
 
-## 影片展示
+---
 
-[![影片展示](https://img.youtube.com/vi/VvKFSDbbvzY/0.jpg)](https://www.youtube.com/watch?v=VvKFSDbbvzY)
+## 🎥 Demo
 
-（點擊圖片觀看影片）
+Watch the demo walkthrough on YouTube:
 
-## 功能特點
+[![VIDEO](https://img.youtube.com/vi/VvKFSDbbvzY/0.jpg)](https://www.youtube.com/watch?v=VvKFSDbbvzY)
 
-- 用戶可以瀏覽不同餐廳的評論和評分以及介紹。
-- 用戶可以按照評分、評論數等條件對餐廳進行排序。
-- 用戶可以添加自己的評論或評分。
-- 用戶可以新增以及修改餐廳資料。
-- 可根據主頁的Top5部分查看本月評分最高的五間餐廳。
+---
 
-## 技術棧
+## ✨ Features
 
-- React
-- React Router
-- HTML/CSS
-- JavaScript (ES6+)
-- Firebase
-- Google Map (api過期可能導致無法正常顯示，在此之前功能正常)
+- **Browse & Search**  
+  View a list of restaurants with name, address, current average rating and number of reviews.  
+- **Sorting & Filtering**  
+  Sort by rating, number of reviews, or name.  
+- **Top 5 Highlights**  
+  Quickly see this month’s top‑rated five restaurants on the homepage.  
+- **Add & Edit Restaurants**  
+  Authenticated users can create new restaurant entries or update existing ones.  
+- **User Reviews & Ratings**  
+  Leave a star rating (1–5) and a text review for any restaurant.  
+- **Interactive Map**  
+  See restaurant locations on Google Maps and get directions.
 
-## API 
-- 使用 [ Service Usage API ] 管理和監控自己的應用程式對於 Google Cloud 平台上服務的使用，並且能夠適時地調整配置和配額限制，以確保應用程式的順利運行。
-- 使用 [ Geocoding API ] 可用於將地址或地名轉換為地理座標（經度和緯度）的過程，也稱為地理編碼（Geocoding）。
-- 使用 [ Maps JavaScript API ] 是Google提供的一個JavaScript API，它允許您在網頁中嵌入交互式地圖，並使用各種地圖相關功能。
+---
 
+## 🛠 Tech Stack
 
-## 如何運行
+- **Framework:** React  
+- **Routing:** React Router  
+- **Styling:** HTML5, CSS3, JavaScript (ES6+)  
+- **Backend & Hosting:** Firebase (Auth, Firestore, Hosting)  
+- **Maps & Geocoding:** Google Maps JavaScript API, Geocoding API  
 
-1. 克隆這個項目到本地環境：
+> **⚠️** You must supply your own Google Maps API key.  
 
-```bash
-git clone https://github.com/kailun1103/Food_Website.git
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v14 or newer)  
+- A Firebase project and service account  
+- Google Maps API key enabled for **Maps JavaScript** and **Geocoding APIs**
+
+### Installation
+
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/kailun1103/Food_Website.git
+   cd Food_Website
+   ```
+
+2. **Install dependencies**  
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment**  
+   Create a `.env.local` file in the project root and add:
+   ```env
+   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+   REACT_APP_FIREBASE_PROJECT_ID=your_project_id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   REACT_APP_FIREBASE_APP_ID=your_app_id
+   REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_key
+   ```
+
+4. **Run the dev server**  
+   ```bash
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 📦 Available Scripts
+
+- `npm start` — Runs the app in development mode.  
+- `npm run build` — Builds the app for production to the `build/` folder.  
+- `npm test` — Launches the test runner.  
+- `npm run lint` — Runs ESLint to analyze code quality.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository  
+2. Create your feature branch (`git checkout -b feature/YourFeature`)  
+3. Commit your changes (`git commit -m 'Add feature'`)  
+4. Push to the branch (`git push origin feature/YourFeature`)  
+5. Open a Pull Request
+
+Please follow the existing code style and include clear commit messages.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License:
+
+```
+MIT License
+
+Copyright (c) 2025 Kellen Chang
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
-2. 進入專案目錄：
+---
 
-```bash
-cd food_website
-```
+## ✉️ Contact
 
-3. 安裝相依套件：
+- **Email**: kailunchang1103@gmail.com  
+- **GitHub**: [kailun1103](https://github.com/kailun1103)
 
-```bash
-npm install
-```
-
-4.運行本地開發伺服器：
-
-```bash
-npm start
-```
-
-5.打開瀏覽器，輸入以下網址來訪問網站：
-
-```bash
-http://localhost:3000/home
-```
-
-## 貢獻
-
-如果您有興趣為這個專案做出貢獻，歡迎提交 Pull Request。我們期待您的建議和幫助，讓這個專案變得更好！
-
-
-## 聯絡我們
-
-如果您有任何疑問、建議或合作提案，請隨時與我們聯絡。您可以透過以下方式聯繫我們：
-
-- 電子郵件：kailunchang1103@gmail.com
-
+Feel free to open an issue or drop a PR for any suggestions or bug reports!
