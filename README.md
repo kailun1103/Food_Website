@@ -8,7 +8,7 @@ A React‑based restaurant review platform where users can browse, rate, and rev
 
 Watch the demo walkthrough on YouTube:
 
-[![VIDEO](https://img.youtube.com/vi/VvKFSDbbvzY/0.jpg)](https://www.youtube.com/watch?v=VvKFSDbbvzY)
+[![VIDEO](https://img.youtube.com/vi/STiMlMEpwLY/0.jpg)](https://www.youtube.com/watch?v=STiMlMEpwLY)
 
 ---
 
